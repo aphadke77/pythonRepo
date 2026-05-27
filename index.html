@@ -5,386 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Learning Portal</title>
     <style>
-        :root {
-            --primary-color: #3776ab; /* Python Blue */
-            --secondary-color: #ffd43b; /* Python Yellow */
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #333;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-        h1 { margin: 0; font-size: 2.5rem; }
-        p.subtitle { margin-top: 0.5rem; opacity: 0.9; }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .category-section {
-            margin-bottom: 3rem;
-        }
-        .category-title {
-            font-size: 1.8rem;
-            border-bottom: 3px solid var(--secondary-color);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-        .card h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-        }
-        .card p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0;
-        }
-        .card .type {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #999;
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* Chat Widget Styles */
-        #chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            font-family: sans-serif;
-        }
-        #chat-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #chat-window {
-            display: none;
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            width: 300px;
-            height: 400px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            flex-direction: column;
-            overflow: hidden;
-        }
-        #chat-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #chat-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .message {
-            padding: 8px 12px;
-            border-radius: 15px;
-            max-width: 80%;
-            font-size: 0.9rem;
-        }
-        .message.bot {
-            background: #e9ecef;
-            align-self: flex-start;
-        }
-        .message.user {
-            background: var(--primary-color);
-            color: white;
-            align-self: flex-end;
-        }
-        #chat-input-area {
-            padding: 10px;
-            border-top: 1px solid #eee;
-            display: flex;
-        }
-        #chat-input {
-            flex: 1;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            padding: 5px 15px;
-            outline: none;
-        }
-        #chat-send {
-            background: none;
-            border: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-left: 10px;
-            cursor: pointer;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f9; }
+        header { background: #306998; color: #ffd43b; padding: 2rem 1rem; text-align: center; border-bottom: 5px solid #ffd43b; }
+        nav { background: #333; color: #fff; padding: 0.5rem; position: sticky; top: 0; text-align: center; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #306998; border-left: 5px solid #ffd43b; padding-left: 10px; margin-top: 30px; }
+        .module { padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .code-block { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; font-family: 'Courier New', Courier, monospace; overflow-x: auto; margin: 10px 0; }
+        .badge { display: inline-block; background: #ffd43b; color: #333; padding: 2px 8px; border-radius: 3px; font-size: 0.8rem; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Python Learning Portal</h1>
-    <p class="subtitle">Master Python Automation & Development</p>
+    <h1>Everything About Python Portal</h1>
+    <p>Mastering Automation, Security, and Intelligence with Python</p>
 </header>
 
+<nav>
+    <a href="#intro">Introduction</a>
+    <a href="#basics">Fundamentals</a>
+    <a href="#logic">Logic & Loops</a>
+    <a href="#data">Data Structures</a>
+    <a href="#advanced">Advanced & AI</a>
+</nav>
+
 <div class="container">
-
-    <section class="category-section">
-        <h2 class="category-title">Getting Started</h2>
-        <div class="grid">
-            <a href="README.md" class="card">
-                <div>
-                    <div class="type">Documentation</div>
-                    <h3>Project Overview</h3>
-                    <p>Start here to understand the scope of this learning repository.</p>
-                </div>
-            </a>
-            <a href="Python for the Aspiring Shadow_ A Beginner's Guide to Ethical Hacking Automation.md" class="card">
-                <div>
-                    <div class="type">Guide</div>
-                    <h3>Ethical Hacking Automation</h3>
-                    <p>A beginner's guide to using Python for security automation.</p>
-                </div>
-            </a>
+    
+    <section id="intro">
+        <h2>1. Why Python?</h2>
+        <div class="module">
+            <p>Python is widely considered the best first language to learn due to its <b>gentle learning curve and readable syntax</b>. It acts as a "Swiss Army knife" for tasks ranging from web development to data science.</p>
+            <ul>
+                <li><b>Simple and Easy:</b> Reads like English, reducing the learning curve.</li>
+                <li><b>Versatile:</b> Used in AI, automation, web development, and hacking.</li>
+                <li><b>Cross-Platform:</b> Runs seamlessly on Windows, macOS, and Linux.</li>
+            </ul>
         </div>
     </section>
 
-    <section class="category-section">
-        <h2 class="category-title">Visual Learning</h2>
-        <div class="grid">
-            <a href="infographic/Master Python Automation Guide.png" class="card">
-                <div>
-                    <div class="type">Infographic</div>
-                    <h3>Automation Guide</h3>
-                    <p>A visual roadmap for mastering Python automation.</p>
-                </div>
-            </a>
-            <a href="infographic/Start Automating_ Coding for Beginners.png" class="card">
-                <div>
-                    <div class="type">Infographic</div>
-                    <h3>Beginner Roadmap</h3>
-                    <p>Step-by-step visual guide for starting your coding journey.</p>
-                </div>
-            </a>
-            <a href="infographic/Automating Basic Security Tasks.png" class="card">
-                <div>
-                    <div class="type">Infographic</div>
-                    <h3>Security Tasks</h3>
-                    <p>Visualizing common security automation workflows.</p>
-                </div>
-            </a>
-            <a href="infographic/Top 5 Generative AI Libraries.png" class="card">
-                <div>
-                    <div class="type">Infographic</div>
-                    <h3>AI Libraries</h3>
-                    <p>Overview of the top 5 libraries for Generative AI.</p>
-                </div>
-            </a>
+    <section id="basics">
+        <h2>2. Programming Fundamentals</h2>
+        <div class="module">
+            <p><span class="badge">Chapter 1-3</span> Learn the building blocks of the language.</p>
+            <h3>Basic Syntax & Variables</h3>
+            <p>Variables are used to store data values like numbers and strings without needing to explicitly declare the type.</p>
+            <div class="code-block">
+                # Example of variable assignment<br>
+                name = "Alice"<br>
+                age = 25<br>
+                print(f"Hello, {name}!") # Using F-strings for formatting
+            </div>
+            <h3>Core Data Types</h3>
+            <ul>
+                <li><b>Integers (int):</b> Whole numbers (e.g., 42).</li>
+                <li><b>Floating-point (float):</b> Numbers with decimals (e.g., 3.14).</li>
+                <li><b>Strings (str):</b> Text values surrounded by single or double quotes.</li>
+                <li><b>Booleans (bool):</b> Logic values: <code>True</code> or <code>False</code>.</li>
+            </ul>
         </div>
     </section>
 
-    <section class="category-section">
-        <h2 class="category-title">Deep Dives & Reports</h2>
-        <div class="grid">
-            <a href="reports/Automate the Boring Stuff with Python, 3rd Edition_ A Beginner’s Condensed Guide.md" class="card">
-                <div>
-                    <div class="type">Report</div>
-                    <h3>Automate the Boring Stuff</h3>
-                    <p>A condensed guide to practical Python automation.</p>
-                </div>
-            </a>
-            <a href="reports/Why You Should Learn to Code (Even if AI Can Do It For You)_ 5 Surprising Truths About Modern Automation.md" class="card">
-                <div>
-                    <div class="type">Report</div>
-                    <h3>The Value of Coding</h3>
-                    <p>Why programming skills matter in the age of AI.</p>
-                </div>
-            </a>
+    <section id="logic">
+        <h2>3. Control Flow: Logic & Repetition</h2>
+        <div class="module">
+            <h3>Decision Making (if-else)</h3>
+            <p>Use <code>if</code>, <code>elif</code>, and <code>else</code> statements to decide which code blocks to execute based on conditions.</p>
+            <div class="code-block">
+                if age >= 18:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Access granted.")<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print("Access denied.")
+            </div>
+            <h3>Loops (while & for)</h3>
+            <p><b>While loops</b> repeat as long as a condition is true, whereas <b>for loops</b> repeat a specific number of times or for each item in a sequence.</p>
+            <div class="code-block">
+                # For loop iterating through a range<br>
+                for i in range(5):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(f"On iteration {i}")
+            </div>
         </div>
     </section>
 
-    <section class="category-section">
-        <h2 class="category-title">Resources & Training</h2>
-        <div class="grid">
-            <a href="slide-decks/Python Security Automation.pdf" class="card">
-                <div>
-                    <div class="type">Presentation</div>
-                    <h3>Security Automation Deck</h3>
-                    <p>A slide deck covering Python for security professionals.</p>
-                </div>
-            </a>
-            <a href="slide-decks/The Automation Blueprint.pdf" class="card">
-                <div>
-                    <div class="type">Presentation</div>
-                    <h3>The Automation Blueprint</h3>
-                    <p>Mastering the framework of automation.</p>
-                </div>
-            </a>
-            <a href="flashcards.json" class="card">
-                <div>
-                    <div class="type">Study Tool</div>
-                    <h3>Flashcards</h3>
-                    <p>JSON-formatted flashcards for quick revision.</p>
-                </div>
-            </a>
+    <section id="data">
+        <h2>4. Organizing Data</h2>
+        <div class="module">
+            <h3>Lists & Dictionaries</h3>
+            <p><b>Lists</b> are ordered sequences of values. <b>Dictionaries</b> are mutable collections of key-value pairs.</p>
+            <div class="code-block">
+                # A List<br>
+                my_cats = ['Zophie', 'Pooka', 'Simon']<br><br>
+                # A Dictionary<br>
+                cat_data = {'name': 'Zophie', 'color': 'gray', 'age': 7}
+            </div>
+            <p>Lists use integer indexes (starting at 0), while dictionaries use unique keys to retrieve items.</p>
         </div>
     </section>
 
+    <section id="advanced">
+        <h2>5. Advanced Automation & AI</h2>
+        <div class="module">
+            <h3>Ethical Hacking Tools</h3>
+            <p>Python is powerful for writing exploits, scanners, and network tools. Tools like <b>Scapy</b> can sniff packets, while the <b>socket</b> module allows for port scanning.</p>
+            <h3>Generative AI Libraries</h3>
+            <p>Leverage pre-trained models to build intelligent systems:</p>
+            <ul>
+                <li><b>Transformers:</b> Access state-of-the-art models like GPT and BERT.</li>
+                <li><b>LangChain:</b> Build complex conversational AI workflows.</li>
+                <li><b>Diffusers:</b> Generate images and media using diffusion models.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer style="text-align: center; margin-top: 50px; font-size: 0.9rem; color: #777;">
+        <p>Curriculum derived from "Automate the Boring Stuff with Python" and supplementary technical notes.</p>
+    </footer>
 </div>
 
-<div id="chat-widget">
-    <div id="chat-window">
-        <div id="chat-header">
-            <span>Repo Assistant</span>
-            <span style="cursor:pointer" onclick="toggleChat()">×</span>
-        </div>
-        <div id="chat-messages">
-            <div class="message bot">Hi! Ask me anything about this Python repo.</div>
-        </div>
-        <div id="chat-input-area">
-            <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
-            <button id="chat-send" onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-    <button id="chat-button" onclick="toggleChat()">💬</button>
-</div>
-
-<footer>
-    <p>&copy; 2026 Python Learning Portal | Built for Developers</p>
-</footer>
-
-        <script>
-            let knowledgeBase = [];
-
-            // Load knowledge base on page load
-            window.addEventListener('DOMContentLoaded', async () => {
-                try {
-                    const response = await fetch('knowledge_base.json');
-                    knowledgeBase = await response.json();
-                    console.log('Knowledge base loaded');
-                } catch (error) {
-                    console.error('Failed to load knowledge base:', error);
-                }
-            });
-
-            function toggleChat() {
-                const window = document.getElementById('chat-window');
-                window.style.display = window.style.display === 'flex' ? 'none' : 'flex';
-            }
-
-            function handleKeyPress(event) {
-                if (event.key === 'Enter') {
-                    sendMessage();
-                }
-            }
-
-            function sendMessage() {
-                const input = document.getElementById('chat-input');
-                const text = input.value.trim();
-                if (!text) return;
-
-                addMessage(text, 'user');
-                input.value = '';
-
-                // Search knowledge base
-                setTimeout(() => {
-                    const answer = getAnswer(text);
-                    addMessage(answer, 'bot');
-                }, 500);
-            }
-
-            function getAnswer(userInput) {
-                if (knowledgeBase.length === 0) {
-                    return "I'm still warming up my circuits! Try again in a second.";
-                }
-
-                const lowerInput = userInput.toLowerCase();
-                
-                // Try to find a matching keyword
-                for (const entry of knowledgeBase) {
-                    for (const keyword of entry.keywords) {
-                        if (lowerInput.includes(keyword)) {
-                            return entry.answer;
-                        }
-                    }
-                }
-
-                return "I'm not sure about that specific question, but feel free to ask about security, infographics, reports, or automation!";
-            }
-
-            function addMessage(text, type) {
-                const messagesDiv = document.getElementById('chat-messages');
-                const msgDiv = document.createElement('div');
-                msgDiv.className = `message ${type}`;
-                msgDiv.textContent = text;
-                messagesDiv.appendChild(msgDiv);
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }
-        </script>
 </body>
 </html>
-
-
