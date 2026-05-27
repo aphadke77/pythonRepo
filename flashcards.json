@@ -1,0 +1,325 @@
+{
+  "title": "Python Flashcards",
+  "cards": [
+    {
+      "front": "Which Python data type is used to represent whole numbers like -5 or 42?",
+      "back": "Integer (int)."
+    },
+    {
+      "front": "What data type are numbers with a decimal point, such as 3.14?",
+      "back": "Floating-point numbers (float)."
+    },
+    {
+      "front": "In Python, what characters must always surround a string value?",
+      "back": "Single quotes (') or double quotes (\")."
+    },
+    {
+      "front": "What is the specific name for a string with no characters, written as ''?",
+      "back": "Blank string (or empty string)."
+    },
+    {
+      "front": "Which math operator is used for exponentiation (e.g., $2^3$)?",
+      "back": "The double asterisk (**)."
+    },
+    {
+      "front": "What is the result of the integer division (floor division) operator //?",
+      "back": "The quotient rounded down to the nearest whole number."
+    },
+    {
+      "front": "Which operator returns the remainder of a division?",
+      "back": "The modulo operator (%)."
+    },
+    {
+      "front": "What term describes a combination of values and operators that evaluates to a single value?",
+      "back": "An expression."
+    },
+    {
+      "front": "Which function is used to display text or values on the screen?",
+      "back": "The print() function."
+    },
+    {
+      "front": "Which function allows a program to receive text input from the keyboard?",
+      "back": "The input() function."
+    },
+    {
+      "front": "What does the len() function return when passed a string?",
+      "back": "The number of characters in the string as an integer."
+    },
+    {
+      "front": "How can you convert the integer 10 into the string '10'?",
+      "back": "By using the str() function."
+    },
+    {
+      "front": "Which function converts a value into a floating-point number?",
+      "back": "The float() function."
+    },
+    {
+      "front": "Term: Interactive Shell (REPL)",
+      "back": "Definition: A program that executes Python instructions one at a time and shows results immediately."
+    },
+    {
+      "front": "In Python, the assignment operator is the _____ sign.",
+      "back": "equal (=)"
+    },
+    {
+      "front": "What occurs to the old value of a variable when a new value is assigned to it?",
+      "back": "The old value is forgotten or overwritten."
+    },
+    {
+      "front": "Which function evaluates the data type of a specific value?",
+      "back": "The type() function."
+    },
+    {
+      "front": "Which function returns the absolute value of a number (e.g., converting -25 to 25)?",
+      "back": "The abs() function."
+    },
+    {
+      "front": "What is the Python comparison operator for 'not equal to'?",
+      "back": "The exclamation point and equal sign ($!=$)."
+    },
+    {
+      "front": "Which Boolean operator evaluates to True only if both sub-expressions are True?",
+      "back": "The and operator."
+    },
+    {
+      "front": "Which Boolean operator evaluates to True if at least one sub-expression is True?",
+      "back": "The or operator."
+    },
+    {
+      "front": "The _____ operator evaluates to the opposite Boolean value of the expression it precedes.",
+      "back": "not"
+    },
+    {
+      "front": "How does Python determine which lines of code belong to the same block?",
+      "back": "By using consistent indentation."
+    },
+    {
+      "front": "Which flow control statement executes a block if a condition is True, and skips to an optional block if it is False?",
+      "back": "The if-else statement."
+    },
+    {
+      "front": "Which statement provides a way to check multiple mutually exclusive conditions after an initial 'if'?",
+      "back": "The elif statement."
+    },
+    {
+      "front": "Which loop type continues to execute its block as long as a certain condition remains True?",
+      "back": "The while loop."
+    },
+    {
+      "front": "What statement causes the program execution to immediately exit a loop?",
+      "back": "The break statement."
+    },
+    {
+      "front": "Which statement causes the program to jump back to the start of the loop and re-evaluate the condition?",
+      "back": "The continue statement."
+    },
+    {
+      "front": "Which function is commonly used with a 'for' loop to iterate a specific number of times?",
+      "back": "The range() function."
+    },
+    {
+      "front": "Term: Module",
+      "back": "Definition: A library of Python code containing functions that can be imported into a program."
+    },
+    {
+      "front": "Which keyword is used to create and define a new function?",
+      "back": "The def keyword."
+    },
+    {
+      "front": "What value is automatically returned by a function that does not have a return statement?",
+      "back": "The None value."
+    },
+    {
+      "front": "How do you specify a different separator between items in a print() function call?",
+      "back": "By passing a string to the 'sep' keyword argument."
+    },
+    {
+      "front": "What data type is an ordered collection of values typically written inside square brackets []?",
+      "back": "A list."
+    },
+    {
+      "front": "What is the index of the very first item in a Python list?",
+      "back": "Zero (0)."
+    },
+    {
+      "front": "What integer index is used to access the last item in a list regardless of its length?",
+      "back": "-1."
+    },
+    {
+      "front": "What is the process of creating a new list from a range of indices in an existing list?",
+      "back": "Slicing."
+    },
+    {
+      "front": "Term: Tuple",
+      "back": "Definition: An immutable sequence of values, similar to a list but written with parentheses ()."
+    },
+    {
+      "front": "What is the primary difference between a list and a tuple?",
+      "back": "Lists are mutable (changeable) while tuples are immutable."
+    },
+    {
+      "front": "Which data type uses key-value pairs to organize data?",
+      "back": "A dictionary."
+    },
+    {
+      "front": "Which character sequence represents a newline inside a string?",
+      "back": "The backslash and 'n' (\\n)."
+    },
+    {
+      "front": "Which character sequence represents a tab inside a string?",
+      "back": "The backslash and 't' (\\t)."
+    },
+    {
+      "front": "How can you include a literal backslash character in a Python string?",
+      "back": "By using a double backslash (\\\\)."
+    },
+    {
+      "front": "Term: Regular Expression (Regex)",
+      "back": "Definition: A sequence of characters that forms a search pattern for text matching."
+    },
+    {
+      "front": "Which Python module is used for working with regular expressions?",
+      "back": "The re module."
+    },
+    {
+      "front": "Term: Web Scraping",
+      "back": "Definition: Using a program to automatically download and process content from the internet."
+    },
+    {
+      "front": "Which third-party module is used to download web pages and files from a URL?",
+      "back": "The requests module."
+    },
+    {
+      "front": "What method on a requests response object ensures that a download was successful by raising an exception on error?",
+      "back": "The raise_for_status() method."
+    },
+    {
+      "front": "Which library is used to parse and extract information from HTML documents?",
+      "back": "Beautiful Soup (bs4)."
+    },
+    {
+      "front": "What method in Beautiful Soup retrieves elements matching a CSS selector string?",
+      "back": "The select() method."
+    },
+    {
+      "front": "Which library allows Python to control a web browser to simulate mouse clicks and form filling?",
+      "back": "Selenium (or Playwright)."
+    },
+    {
+      "front": "What is 'headless mode' in browser automation?",
+      "back": "Running a browser simulation without an visible window on the screen."
+    },
+    {
+      "front": "Which module allows Python to read and modify .xlsx Excel files?",
+      "back": "The openpyxl module."
+    },
+    {
+      "front": "In openpyxl, which function is used to open an existing spreadsheet file?",
+      "back": "The load_workbook() function."
+    },
+    {
+      "front": "Which attribute of an openpyxl Workbook object provides the titles of all sheets in the file?",
+      "back": "The sheetnames attribute."
+    },
+    {
+      "front": "How do you access the value of cell A1 from a worksheet object named 'sheet' in openpyxl?",
+      "back": "By using sheet['A1'].value."
+    },
+    {
+      "front": "Which openpyxl sheet method is used to combine multiple cells into one?",
+      "back": "The merge_cells() method."
+    },
+    {
+      "front": "Which module provides a simple interface for interacting with Google Sheets?",
+      "back": "The ezsheets module."
+    },
+    {
+      "front": "Which module is used to simulate keyboard presses and mouse movements to automate GUI tasks?",
+      "back": "The PyAutoGUI module."
+    },
+    {
+      "front": "What is the primary risk of using PyAutoGUI for automation?",
+      "back": "It is 'blind' to the screen and can fail if windows move or resolution changes."
+    },
+    {
+      "front": "Which PyAutoGUI method is used to simulate typing a string of text?",
+      "back": "The typewrite() or write() method."
+    },
+    {
+      "front": "What does a 'fail-safe' do in PyAutoGUI?",
+      "back": "It stops the program if the mouse is moved to a corner of the screen."
+    },
+    {
+      "front": "Which library is used to programmatically read and edit Microsoft Word (.docx) files?",
+      "back": "The python-docx library."
+    },
+    {
+      "front": "What does 'CSV' stand for in the context of data files?",
+      "back": "Comma-Separated Values."
+    },
+    {
+      "front": "What two data formats are most commonly used by online APIs to return responses?",
+      "back": "JSON and XML."
+    },
+    {
+      "front": "Which function in the json module converts a JSON-formatted string into a Python dictionary?",
+      "back": "The json.loads() function."
+    },
+    {
+      "front": "Which module is used to handle dates and times in Python?",
+      "back": "The datetime module."
+    },
+    {
+      "front": "What does the time.sleep() function do?",
+      "back": "It pauses the program execution for a specified number of seconds."
+    },
+    {
+      "front": "Which module allows Python to send and receive emails?",
+      "back": "The smtplib and imaplib modules."
+    },
+    {
+      "front": "Term: Web Crawler",
+      "back": "Definition: A program that automatically follows links on web pages to download or index data."
+    },
+    {
+      "front": "What is the keyboard shortcut to open Developer Tools in most web browsers?",
+      "back": "The F12 key."
+    },
+    {
+      "front": "Which CSS selector would you use to find an element with the 'id' attribute 'main'?",
+      "back": "'#main'."
+    },
+    {
+      "front": "Which CSS selector would you use to find all elements with the class 'highlight'?",
+      "back": "'.highlight'."
+    },
+    {
+      "front": "What is the purpose of the 'freeze pane' feature in Excel?",
+      "back": "To keep specific rows or columns visible while scrolling through the rest of the sheet."
+    },
+    {
+      "front": "In programming, what is a 'bug'?",
+      "back": "An error in the code that causes it to behave unexpectedly."
+    },
+    {
+      "front": "What term describes the process of finding and fixing errors in code?",
+      "back": "Debugging."
+    },
+    {
+      "front": "Which keyword is used to exit a function and send a value back to the caller?",
+      "back": "The return keyword."
+    },
+    {
+      "front": "What is a 'global variable'?",
+      "back": "A variable defined outside of any function that can be accessed by any part of the program."
+    },
+    {
+      "front": "What happens when you pass a negative number to the range() function, such as range(5, -1, -1)?",
+      "back": "It creates a sequence that counts down from the first number to the second."
+    },
+    {
+      "front": "What is the name of the author of 'Automate the Boring Stuff with Python'?",
+      "back": "Al Sweigart."
+    }
+  ]
+}
