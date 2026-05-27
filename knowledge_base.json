@@ -1,0 +1,38 @@
+[
+  {
+    "keywords": ["hello", "hi", "hey"],
+    "answer": "Hello! I am the Python Learning Portal assistant. How can I help you explore this repository today?"
+  },
+  {
+    "keywords": ["what is this", "about", "repo", "repository"],
+    "answer": "This repository is a Python Learning Portal containing various resources like infographics, reports, slide decks, and guides to help you master Python automation and security."
+  },
+  {
+    "keywords": ["security", "hacking", "ethical"],
+    "answer": "We have several security resources: 'Python Security Automation' (PDF), 'Python for the Aspiring Shadow' (Guide), and 'Automating Basic Security Tasks' (Infographic)."
+  },
+  {
+    "keywords": ["infographic", "visual"],
+    "answer": "You can find many infographics in the 'infographic/' folder, including guides on automation, beginner roadmaps, and Generative AI libraries."
+  },
+  {
+    "keywords": ["report", "guide"],
+    "answer": "Check the 'reports/' folder for deep dives like 'Automate the Boring Stuff' and 'The Value of Coding'."
+  },
+  {
+    "keywords": ["slide", "presentation", "deck"],
+    "answer": "There are slide decks available in the 'slide-decks/' folder, such as 'Python Security Automation' and 'The Automation Blueprint'."
+  },
+  {
+    "keywords": ["flashcards", "study", "quiz"],
+    "answer": "You can use the 'flashcards.json' file for quick revision and study."
+  },
+  {
+    "keywords": ["automation", "boring"],
+    "answer": "For practical automation, check out our report: 'Automate the Boring Stuff with Python, 3rd Edition'."
+  },
+  {
+    "keywords": ["ai", "generative"],
+    "answer": "We have an infographic titled 'Top 5 Generative AI Libraries' to get you started with AI in Python."
+  }
+]

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning Portal</title>
+    <style>
+        :root {
+            --primary-color: #3776ab; /* Python Blue */
+            --secondary-color: #ffd43b; /* Python Yellow */
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+        p.subtitle { margin-top: 0.5rem; opacity: 0.9; }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        .category-title {
+            font-size: 1.8rem;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+        .card .type {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Chat Widget Styles */
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-family: sans-serif;
+        }
+        #chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #chat-window {
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 300px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #chat-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            padding: 8px 12px;
+            border-radius: 15px;
+            max-width: 80%;
+            font-size: 0.9rem;
+        }
+        .message.bot {
+            background: #e9ecef;
+            align-self: flex-start;
+        }
+        .message.user {
+            background: var(--primary-color);
+            color: white;
+            align-self: flex-end;
+        }
+        #chat-input-area {
+            padding: 10px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+        #chat-input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 15px;
+            outline: none;
+        }
+        #chat-send {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Python Learning Portal</h1>
+    <p class="subtitle">Master Python Automation & Development</p>
+</header>
+
+<div class="container">
+
+    <section class="category-section">
+        <h2 class="category-title">Getting Started</h2>
+        <div class="grid">
+            <a href="README.md" class="card">
+                <div>
+                    <div class="type">Documentation</div>
+                    <h3>Project Overview</h3>
+                    <p>Start here to understand the scope of this learning repository.</p>
+                </div>
+            </a>
+            <a href="Python for the Aspiring Shadow_ A Beginner's Guide to Ethical Hacking Automation.md" class="card">
+                <div>
+                    <div class="type">Guide</div>
+                    <h3>Ethical Hacking Automation</h3>
+                    <p>A beginner's guide to using Python for security automation.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="category-title">Visual Learning</h2>
+        <div class="grid">
+            <a href="infographic/Master Python Automation Guide.png" class="card">
+                <div>
+                    <div class="type">Infographic</div>
+                    <h3>Automation Guide</h3>
+                    <p>A visual roadmap for mastering Python automation.</p>
+                </div>
+            </a>
+            <a href="infographic/Start Automating_ Coding for Beginners.png" class="card">
+                <div>
+                    <div class="type">Infographic</div>
+                    <h3>Beginner Roadmap</h3>
+                    <p>Step-by-step visual guide for starting your coding journey.</p>
+                </div>
+            </a>
+            <a href="infographic/Automating Basic Security Tasks.png" class="card">
+                <div>
+                    <div class="type">Infographic</div>
+                    <h3>Security Tasks</h3>
+                    <p>Visualizing common security automation workflows.</p>
+                </div>
+            </a>
+            <a href="infographic/Top 5 Generative AI Libraries.png" class="card">
+                <div>
+                    <div class="type">Infographic</div>
+                    <h3>AI Libraries</h3>
+                    <p>Overview of the top 5 libraries for Generative AI.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="category-title">Deep Dives & Reports</h2>
+        <div class="grid">
+            <a href="reports/Automate the Boring Stuff with Python, 3rd Edition_ A Beginner’s Condensed Guide.md" class="card">
+                <div>
+                    <div class="type">Report</div>
+                    <h3>Automate the Boring Stuff</h3>
+                    <p>A condensed guide to practical Python automation.</p>
+                </div>
+            </a>
+            <a href="reports/Why You Should Learn to Code (Even if AI Can Do It For You)_ 5 Surprising Truths About Modern Automation.md" class="card">
+                <div>
+                    <div class="type">Report</div>
+                    <h3>The Value of Coding</h3>
+                    <p>Why programming skills matter in the age of AI.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="category-title">Resources & Training</h2>
+        <div class="grid">
+            <a href="slide-decks/Python Security Automation.pdf" class="card">
+                <div>
+                    <div class="type">Presentation</div>
+                    <h3>Security Automation Deck</h3>
+                    <p>A slide deck covering Python for security professionals.</p>
+                </div>
+            </a>
+            <a href="slide-decks/The Automation Blueprint.pdf" class="card">
+                <div>
+                    <div class="type">Presentation</div>
+                    <h3>The Automation Blueprint</h3>
+                    <p>Mastering the framework of automation.</p>
+                </div>
+            </a>
+            <a href="flashcards.json" class="card">
+                <div>
+                    <div class="type">Study Tool</div>
+                    <h3>Flashcards</h3>
+                    <p>JSON-formatted flashcards for quick revision.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</div>
+
+<div id="chat-widget">
+    <div id="chat-window">
+        <div id="chat-header">
+            <span>Repo Assistant</span>
+            <span style="cursor:pointer" onclick="toggleChat()">×</span>
+        </div>
+        <div id="chat-messages">
+            <div class="message bot">Hi! Ask me anything about this Python repo.</div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button id="chat-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <button id="chat-button" onclick="toggleChat()">💬</button>
+</div>
+
+<footer>
+    <p>&copy; 2026 Python Learning Portal | Built for Developers</p>
+</footer>
+
+        <script>
+            let knowledgeBase = [];
+
+            // Load knowledge base on page load
+            window.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    const response = await fetch('knowledge_base.json');
+                    knowledgeBase = await response.json();
+                    console.log('Knowledge base loaded');
+                } catch (error) {
+                    console.error('Failed to load knowledge base:', error);
+                }
+            });
+
+            function toggleChat() {
+                const window = document.getElementById('chat-window');
+                window.style.display = window.style.display === 'flex' ? 'none' : 'flex';
+            }
+
+            function handleKeyPress(event) {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            }
+
+            function sendMessage() {
+                const input = document.getElementById('chat-input');
+                const text = input.value.trim();
+                if (!text) return;
+
+                addMessage(text, 'user');
+                input.value = '';
+
+                // Search knowledge base
+                setTimeout(() => {
+                    const answer = getAnswer(text);
+                    addMessage(answer, 'bot');
+                }, 500);
+            }
+
+            function getAnswer(userInput) {
+                if (knowledgeBase.length === 0) {
+                    return "I'm still warming up my circuits! Try again in a second.";
+                }
+
+                const lowerInput = userInput.toLowerCase();
+                
+                // Try to find a matching keyword
+                for (const entry of knowledgeBase) {
+                    for (const keyword of entry.keywords) {
+                        if (lowerInput.includes(keyword)) {
+                            return entry.answer;
+                        }
+                    }
+                }
+
+                return "I'm not sure about that specific question, but feel free to ask about security, infographics, reports, or automation!";
+            }
+
+            function addMessage(text, type) {
+                const messagesDiv = document.getElementById('chat-messages');
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `message ${type}`;
+                msgDiv.textContent = text;
+                messagesDiv.appendChild(msgDiv);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+        </script>
+</body>
+</html>
+
+
