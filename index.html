@@ -273,7 +273,7 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
                 <!-- Card 1 -->
                 <div class="flex-none w-72 md:w-80 snap-center">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                        <img src="Automating Basic Security Tasks.png" alt="Automating Basic Security Tasks" class="w-full h-48 object-cover">
+                        <img src="Automating Basic Security Tasks.png" alt="Automating Basic Security Tasks" class="w-full h-48 object-cover cursor-zoom-in" onclick="openModal(this.src)">
                         <div class="p-4">
                             <h3 class="font-semibold text-slate-900">Security Automation</h3>
                         </div>
@@ -282,7 +282,7 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
                 <!-- Card 2 -->
                 <div class="flex-none w-72 md:w-80 snap-center">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                        <img src="Automating PDF Workflows with Code.png" alt="Automating PDF Workflows with Code" class="w-full h-48 object-cover">
+                        <img src="Automating PDF Workflows with Code.png" alt="Automating PDF Workflows with Code" class="w-full h-48 object-cover cursor-zoom-in" onclick="openModal(this.src)">
                         <div class="p-4">
                             <h3 class="font-semibold text-slate-900">PDF Workflows</h3>
                         </div>
@@ -291,7 +291,7 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
                 <!-- Card 3 -->
                 <div class="flex-none w-72 md:w-80 snap-center">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                        <img src="Data Organization Structures Overview.png" alt="Data Organization Structures Overview" class="w-full h-48 object-cover">
+                        <img src="Data Organization Structures Overview.png" alt="Data Organization Structures Overview" class="w-full h-48 object-cover cursor-zoom-in" onclick="openModal(this.src)">
                         <div class="p-4">
                             <h3 class="font-semibold text-slate-900">Data Organization</h3>
                         </div>
@@ -300,7 +300,7 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
                 <!-- Card 4 -->
                 <div class="flex-none w-72 md:w-80 snap-center">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                        <img src="Master Python Automation Guide.png" alt="Master Python Automation Guide" class="w-full h-48 object-cover">
+                        <img src="Master Python Automation Guide.png" alt="Master Python Automation Guide" class="w-full h-48 object-cover cursor-zoom-in" onclick="openModal(this.src)">
                         <div class="p-4">
                             <h3 class="font-semibold text-slate-900">Automation Guide</h3>
                         </div>
@@ -309,7 +309,7 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
                 <!-- Card 5 -->
                 <div class="flex-none w-72 md:w-80 snap-center">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                        <img src="Start Automating_ Coding for Beginners.png" alt="Start Automating_ Coding for Beginners" class="w-full h-48 object-cover">
+                        <img src="Start Automating_ Coding for Beginners.png" alt="Start Automating_ Coding for Beginners" class="w-full h-48 object-cover cursor-zoom-in" onclick="openModal(this.src)">
                         <div class="p-4">
                             <h3 class="font-semibold text-slate-900">Beginner's Guide</h3>
                         </div>
@@ -318,7 +318,7 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
                 <!-- Card 6 -->
                 <div class="flex-none w-72 md:w-80 snap-center">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
-                        <img src="Top 5 Generative AI Libraries.png" alt="Top 5 Generative AI Libraries" class="w-full h-48 object-cover">
+                        <img src="Top 5 Generative AI Libraries.png" alt="Top 5 Generative AI Libraries" class="w-full h-48 object-cover cursor-zoom-in" onclick="openModal(this.src)">
                         <div class="p-4">
                             <h3 class="font-semibold text-slate-900">Generative AI</h3>
                         </div>
@@ -337,6 +337,27 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
             </p>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
+        <img id="modal-img" src="" class="max-w-full max-h-full rounded shadow-2xl">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 
 </body>
 </html>
