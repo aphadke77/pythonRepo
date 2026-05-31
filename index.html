@@ -1,127 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Learning Portal</title>
+    <title>Python Masterclass | Automation & AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f4f9; }
-        header { background: #306998; color: #ffd43b; padding: 2rem 1rem; text-align: center; border-bottom: 5px solid #ffd43b; }
-        nav { background: #333; color: #fff; padding: 0.5rem; position: sticky; top: 0; text-align: center; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { color: #306998; border-left: 5px solid #ffd43b; padding-left: 10px; margin-top: 30px; }
-        .module { padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; }
-        .code-block { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; font-family: 'Courier New', Courier, monospace; overflow-x: auto; margin: 10px 0; }
-        .badge { display: inline-block; background: #ffd43b; color: #333; padding: 2px 8px; border-radius: 3px; font-size: 0.8rem; font-weight: bold; }
+        body { font-family: 'Inter', sans-serif; }
+        .code-block { font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 antialiased">
 
-<header>
-    <h1>Everything About Python Portal</h1>
-    <p>Mastering Automation, Security, and Intelligence with Python</p>
-</header>
-
-<nav>
-    <a href="#intro">Introduction</a>
-    <a href="#basics">Fundamentals</a>
-    <a href="#logic">Logic & Loops</a>
-    <a href="#data">Data Structures</a>
-    <a href="#advanced">Advanced & AI</a>
-</nav>
-
-<div class="container">
-    
-    <section id="intro">
-        <h2>1. Why Python?</h2>
-        <div class="module">
-            <p>Python is widely considered the best first language to learn due to its <b>gentle learning curve and readable syntax</b>. It acts as a "Swiss Army knife" for tasks ranging from web development to data science.</p>
-            <ul>
-                <li><b>Simple and Easy:</b> Reads like English, reducing the learning curve.</li>
-                <li><b>Versatile:</b> Used in AI, automation, web development, and hacking.</li>
-                <li><b>Cross-Platform:</b> Runs seamlessly on Windows, macOS, and Linux.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="basics">
-        <h2>2. Programming Fundamentals</h2>
-        <div class="module">
-            <p><span class="badge">Chapter 1-3</span> Learn the building blocks of the language.</p>
-            <h3>Basic Syntax & Variables</h3>
-            <p>Variables are used to store data values like numbers and strings without needing to explicitly declare the type.</p>
-            <div class="code-block">
-                # Example of variable assignment<br>
-                name = "Alice"<br>
-                age = 25<br>
-                print(f"Hello, {name}!") # Using F-strings for formatting
-            </div>
-            <h3>Core Data Types</h3>
-            <ul>
-                <li><b>Integers (int):</b> Whole numbers (e.g., 42).</li>
-                <li><b>Floating-point (float):</b> Numbers with decimals (e.g., 3.14).</li>
-                <li><b>Strings (str):</b> Text values surrounded by single or double quotes.</li>
-                <li><b>Booleans (bool):</b> Logic values: <code>True</code> or <code>False</code>.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="logic">
-        <h2>3. Control Flow: Logic & Repetition</h2>
-        <div class="module">
-            <h3>Decision Making (if-else)</h3>
-            <p>Use <code>if</code>, <code>elif</code>, and <code>else</code> statements to decide which code blocks to execute based on conditions.</p>
-            <div class="code-block">
-                if age >= 18:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;print("Access granted.")<br>
-                else:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;print("Access denied.")
-            </div>
-            <h3>Loops (while & for)</h3>
-            <p><b>While loops</b> repeat as long as a condition is true, whereas <b>for loops</b> repeat a specific number of times or for each item in a sequence.</p>
-            <div class="code-block">
-                # For loop iterating through a range<br>
-                for i in range(5):<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;print(f"On iteration {i}")
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                        PythonPortal
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#intro" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Introduction</a>
+                        <a href="#basics" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Fundamentals</a>
+                        <a href="#logic" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Logic</a>
+                        <a href="#data" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Data</a>
+                        <a href="#advanced" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Advanced</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="data">
-        <h2>4. Organizing Data</h2>
-        <div class="module">
-            <h3>Lists & Dictionaries</h3>
-            <p><b>Lists</b> are ordered sequences of values. <b>Dictionaries</b> are mutable collections of key-value pairs.</p>
-            <div class="code-block">
-                # A List<br>
-                my_cats = ['Zophie', 'Pooka', 'Simon']<br><br>
-                # A Dictionary<br>
-                cat_data = {'name': 'Zophie', 'color': 'gray', 'age': 7}
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl">
+                    <span class="block">Mastering the World of</span>
+                    <span class="block text-blue-600">Python Automation</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-slate-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    From basic syntax to advanced AI and ethical hacking. Your comprehensive guide to becoming a proficient Python developer.
+                </p>
+                <div class="mt-10 flex justify-center gap-x-6">
+                    <a href="#intro" class="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition">Get Started</a>
+                    <a href="#basics" class="text-sm font-semibold leading-6 text-slate-900 hover:text-blue-600 transition">View Fundamentals <span aria-hidden="true">→</span></a>
+                </div>
             </div>
-            <p>Lists use integer indexes (starting at 0), while dictionaries use unique keys to retrieve items.</p>
         </div>
-    </section>
-
-    <section id="advanced">
-        <h2>5. Advanced Automation & AI</h2>
-        <div class="module">
-            <h3>Ethical Hacking Tools</h3>
-            <p>Python is powerful for writing exploits, scanners, and network tools. Tools like <b>Scapy</b> can sniff packets, while the <b>socket</b> module allows for port scanning.</p>
-            <h3>Generative AI Libraries</h3>
-            <p>Leverage pre-trained models to build intelligent systems:</p>
-            <ul>
-                <li><b>Transformers:</b> Access state-of-the-art models like GPT and BERT.</li>
-                <li><b>LangChain:</b> Build complex conversational AI workflows.</li>
-                <li><b>Diffusers:</b> Generate images and media using diffusion models.</li>
-            </ul>
+        <!-- Decorative background element -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0 opacity-10 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+            <div class="absolute top-0 right-1/4 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-700"></div>
         </div>
-    </section>
+    </header>
 
-    <footer style="text-align: center; margin-top: 50px; font-size: 0.9rem; color: #777;">
-        <p>Curriculum derived from "Automate the Boring Stuff with Python" and supplementary technical notes.</p>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+
+        <!-- Intro Section -->
+        <section id="intro" class="py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Python?</h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        Python is widely considered the best first language to learn due to its <span class="text-blue-600 font-semibold">gentle learning curve and readable syntax</span>. It acts as a "Swiss Army knife" for modern technology.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-blue-600">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="ml-3 text-slate-600"><b>Simple and Easy:</b> Reads like English, reducing the learning curve.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-blue-600">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="ml-3 text-slate-600"><b>Versatile:</b> Used in AI, automation, web development, and hacking.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 h-6 w-6 text-blue-600">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <p class="ml-3 text-slate-600"><b>Cross-Platform:</b> Runs seamlessly on Windows, macOS, and Linux.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <div class="text-sm font-mono text-blue-600 mb-2"># Python is powerful</div>
+                    <div class="text-lg font-mono text-slate-700">
+                        print("Hello, World!")<br>
+                        <span class="text-slate-400"># Versatility in action</span><br>
+                        import os<br>
+                        import math<br>
+                        import random
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- Fundamentals Section -->
+        <section id="basics" class="py-16">
+            <div class="mb-12">
+                <span class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Module 01</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Programming Fundamentals</h2>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Basic Syntax & Variables</h3>
+                    <p class="text-slate-600 mb-6">Variables are used to store data values like numbers and strings without needing to explicitly declare the type.</p>
+                    <div class="bg-slate-900 rounded-lg p-5 overflow-x-auto">
+                        <pre class="code-block text-sm text-blue-300"><code><span class="text-pink-400"># Example of variable assignment</span>
+name = <span class="text-green-400">"Alice"</span>
+age = <span class="text-orange-400">25</span>
+print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-slate-500"># Using F-strings</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h4 class="font-semibold text-slate-900 mb-2">Core Data Types</h4>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><b class="text-slate-800">Integers (int):</b> Whole numbers (e.g., 42).</li>
+                            <li><b class="text-slate-800">Floating-point (float):</b> Decimals (e.g., 3.14).</li>
+                            <li><b class="text-slate-800">Strings (str):</b> Text values.</li>
+                            <li><b class="text-slate-800">Booleans (bool):</b> <code class="text-pink-500">True</code> or <code class="text-pink-500">False</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 flex items-center">
+                        <p class="text-sm text-blue-800 italic">"The best way to learn is to write code every single day."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logic Section -->
+        <section id="logic" class="py-16">
+            <div class="mb-12">
+                <span class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Module 02</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Control Flow: Logic & Repetition</h2>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Decision Making (if-else)</h3>
+                        <p class="text-slate-600 mb-6">Use <code>if</code>, <code>elif</code>, and <code>else</code> statements to decide which code blocks to execute based on conditions.</p>
+                        <div class="bg-slate-900 rounded-lg p-5 overflow-x-auto">
+                            <pre class="code-block text-sm text-blue-300"><code><span class="text-pink-400">if</span> age >= <span class="text-orange-400">18</span>:
+    print(<span class="text-green-400">"Access granted."</span>)
+<span class="text-pink-400">else</span>:
+    print(<span class="text-green-400">"Access denied."</span>)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                    <div class="p-8">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Loops (while & for)</h3>
+                        <p class="text-slate-600 mb-6"><b>While loops</b> repeat as long as a condition is true, whereas <b>for loops</b> repeat a specific number of times or for each item in a sequence.</p>
+                        <div class="bg-slate-900 rounded-lg p-5 overflow-x-auto">
+                            <pre class="code-block text-sm text-blue-300"><code><span class="text-pink-400"># For loop iterating through a range</span>
+<span class="text-pink-400">for</span> i <span class="text-pink-400">in</span> range(<span class="text-orange-400">5</span>):
+    print(f<span class="text-green-400">"On iteration {i}"</span>)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Section -->
+        <section id="data" class="py-16">
+            <div class="mb-12">
+                <span class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Module 03</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Organizing Data</h2>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-900 mb-4">Lists & Dictionaries</h3>
+                <p class="text-slate-600 mb-6"><b>Lists</b> are ordered sequences of values. <b>Dictionaries</b> are mutable collections of key-value pairs.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900 rounded-lg p-5 overflow-x-auto">
+                        <p class="text-xs text-slate-500 mb-2 uppercase font-bold">Lists</p>
+                        <pre class="code-block text-sm text-blue-300"><code>my_cats = [<span class="text-green-400">'Zophie'</span>, <span class="text-green-400">'Pooka'</span>, <span class="text-green-400">'Simon'</span>]</code></pre>
+                    </div>
+                    <div class="bg-slate-900 rounded-lg p-5 overflow-x-auto">
+                        <p class="text-xs text-slate-500 mb-2 uppercase font-bold">Dictionaries</p>
+                        <pre class="code-block text-sm text-blue-300"><code>cat_data = {
+    <span class="text-green-400">'name'</span>: <span class="text-green-400">'Zophie'</span>,
+    <span class="text-green-400">'color'</span>: <span class="text-green-400">'gray'</span>,
+    <span class="text-green-400">'age'</span>: <span class="text-orange-400">7</span>
+}</code></pre>
+                    </div>
+                </div>
+                <p class="mt-6 text-sm text-slate-500 italic">Lists use integer indexes (starting at 0), while dictionaries use unique keys to retrieve items.</p>
+            </div>
+        </section>
+
+        <!-- Advanced Section -->
+        <section id="advanced" class="py-16">
+            <div class="mb-12 text-center">
+                <span class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Final Frontier</span>
+                <h2 class="text-3xl font-bold text-slate-900 mt-2">Advanced Automation & AI</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="mr-2 text-blue-400">🛡️</span> Ethical Hacking Tools
+                    </h3>
+                    <p class="text-slate-400 mb-6 text-sm leading-relaxed">
+                        Python is powerful for writing exploits, scanners, and network tools.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            Scapy for packet sniffing
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            Socket module for port scanning
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+                        <span class="mr-2 text-indigo-600">🤖</span> Generative AI Libraries
+                    </h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Leverage pre-trained models to build intelligent systems.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center">
+                            <span class="font-semibold text-indigo-600 mr-2">Transformers:</span> GPT/BERT models
+                        </li>
+                        <li class="flex items-center">
+                            <span class="font-semibold text-indigo-600 mr-2">LangChain:</span> AI workflows
+                        </li>
+                        <li class="flex items-center">
+                            <span class="font-semibold text-indigo-600 mr-2">Diffusers:</span> Image generation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">
+                Curriculum derived from <span class="font-semibold">"Automate the Boring Stuff with Python"</span> and supplementary technical notes.
+            </p>
+            <p class="mt-4 text-slate-400 text-xs">
+                &copy; 2026 Python Learning Portal. All rights reserved.
+            </p>
+        </div>
     </footer>
-</div>
 
 </body>
 </html>
