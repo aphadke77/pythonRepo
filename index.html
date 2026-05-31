@@ -11,6 +11,13 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .code-block { font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace; }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
@@ -31,11 +38,12 @@
                         <a href="#logic" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Logic</a>
                         <a href="#data" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Data</a>
                         <a href="#advanced" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Advanced</a>
+                        <a href="#infographics" class="text-slate-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition">Infographics</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+
 
     <!-- Hero Section -->
     <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -255,7 +263,69 @@ print(f<span class="text-green-400">"Hello, {name}!"</span>) <span class="text-s
             </div>
         </section>
 
-    </main>
+        <!-- Infographic Library -->
+        <section id="infographics" class="py-16">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-slate-900">Infographic Library</h2>
+                <p class="text-slate-600 mt-2">Visual guides for quick learning</p>
+            </div>
+            <div class="flex overflow-x-auto pb-8 snap-x snap-mandatory gap-6 px-4 scrollbar-hide">
+                <!-- Card 1 -->
+                <div class="flex-none w-72 md:w-80 snap-center">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                        <img src="Automating Basic Security Tasks.png" alt="Automating Basic Security Tasks" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-900">Security Automation</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="flex-none w-72 md:w-80 snap-center">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                        <img src="Automating PDF Workflows with Code.png" alt="Automating PDF Workflows with Code" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-900">PDF Workflows</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="flex-none w-72 md:w-80 snap-center">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                        <img src="Data Organization Structures Overview.png" alt="Data Organization Structures Overview" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-900">Data Organization</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="flex-none w-72 md:w-80 snap-center">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                        <img src="Master Python Automation Guide.png" alt="Master Python Automation Guide" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-900">Automation Guide</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="flex-none w-72 md:w-80 snap-center">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                        <img src="Start Automating_ Coding for Beginners.png" alt="Start Automating_ Coding for Beginners" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-900">Beginner's Guide</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="flex-none w-72 md:w-80 snap-center">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+                        <img src="Top 5 Generative AI Libraries.png" alt="Top 5 Generative AI Libraries" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-900">Generative AI</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <footer class="bg-white border-t border-slate-200 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
